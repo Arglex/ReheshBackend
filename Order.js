@@ -66,6 +66,12 @@ const Order = sequelize.define('Order', {
     invitor: {
         type: DataTypes.INTEGER
     },
+    bim_commander_id: {
+        type: DataTypes.INTEGER
+    },
+    proffessional_id: {
+        type: DataTypes.INTEGER
+    },
     is_invitor: {
         type: DataTypes.BOOLEAN
     },
