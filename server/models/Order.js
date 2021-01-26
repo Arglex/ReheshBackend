@@ -15,7 +15,7 @@ const Order = sequelize.define('Order', {
     proffessional_at2: {
         type: DataTypes.INTEGER
     },
-    Mn_Order: {
+    mn_order: {
         type: DataTypes.INTEGER
     },
     document_created: {
