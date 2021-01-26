@@ -1,0 +1,1 @@
+var Bid = require('../models/Bid');
