@@ -2,7 +2,8 @@
 const { Sequelize, DataTypes } = require('sequelize');
 const sequelize = new Sequelize('sqlite::memory:');
 
-const PullingBag = sequelize.define('PullingBag', {
+class PullingBag extends Model {}
+PullingBag.init({
     bag_id: {
         type: DataTypes.INTEGER
     },
@@ -15,4 +16,4 @@ const PullingBag = sequelize.define('PullingBag', {
     sum_budget: {
         type: DataTypes.INTEGER
     }
-});
+}, {modelName: "PullingBag"});

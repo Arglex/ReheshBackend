@@ -2,7 +2,8 @@
 const { Sequelize, DataTypes } = require('sequelize');
 const sequelize = new Sequelize('sqlite::memory:');
 
-const SellItem = sequelize.define('SellItem', {
+class SellItem extends Model {}
+SellItem.init({
     item_id: {
         type: DataTypes.INTEGER
     },
@@ -39,4 +40,4 @@ const SellItem = sequelize.define('SellItem', {
     price: {
         type: DataTypes.INTEGER
     }
-});
+}, {modelName: "SellItem"});

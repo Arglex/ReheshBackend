@@ -2,7 +2,8 @@
 const { Sequelize, DataTypes } = require('sequelize');
 const sequelize = new Sequelize('sqlite::memory:');
 
-const BidItem = sequelize.define('BidItem', {
+class Bid extends Model {}
+Bid.init({
     id: {
         type: DataTypes.STRING
     },
@@ -21,4 +22,4 @@ const BidItem = sequelize.define('BidItem', {
     recieve_time: {
         type: DataTypes.DATEONLY
     },
-});
+}, {modelName: "BidItem"});

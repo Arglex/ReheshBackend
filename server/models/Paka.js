@@ -2,7 +2,8 @@
 const { Sequelize, DataTypes } = require('sequelize');
 const sequelize = new Sequelize('sqlite::memory:');
 
-const Paka = sequelize.define('Paka', {
+class Paka extends Model {}
+Paka.init({
     paka: {
         type: DataTypes.INTEGER
     },
@@ -18,4 +19,4 @@ const Paka = sequelize.define('Paka', {
     paka_type: {
         type: DataTypes.INTEGER
     },
-});
+}, {modelName: "Paka"});

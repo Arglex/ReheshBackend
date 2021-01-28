@@ -1,8 +1,9 @@
 
-const { Sequelize, DataTypes } = require('sequelize');
+const { Sequelize, DataTypes, Model } = require('sequelize');
 const sequelize = new Sequelize('sqlite::memory:');
 
-const Order = sequelize.define('Order', {
+class Order extends Model {}
+Order.init({ 
     id: {
         type: DataTypes.INTEGER
     },
@@ -79,4 +80,4 @@ const Order = sequelize.define('Order', {
         type: DataTypes.BOOLEAN
     },
 
-});
+}, {modelName: "Order"});

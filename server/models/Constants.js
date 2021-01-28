@@ -2,7 +2,8 @@
 const { Sequelize, DataTypes } = require('sequelize');
 const sequelize = new Sequelize('sqlite::memory:');
 
-const Constants = sequelize.define('Constants', {
+class Constants extends Model {}
+Constants.init({
     cons_id: {
         type: DataTypes.INTEGER
     },
@@ -15,4 +16,4 @@ const Constants = sequelize.define('Constants', {
     price_value: {
         type: DataTypes.STRING
     }
-});
+}, {modelName: "Constants"});

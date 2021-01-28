@@ -2,7 +2,8 @@
 const { Sequelize, DataTypes } = require('sequelize');
 const sequelize = new Sequelize('sqlite::memory:');
 
-const Creator = sequelize.define('Creator', {
+class Creator extends Model {}
+Creator.init({
     id: {
         type: DataTypes.INTEGER
     },
@@ -12,4 +13,4 @@ const Creator = sequelize.define('Creator', {
     creator_num: {
         type: DataTypes.STRING
     }
-});
+}, {modelName: "Creator"});

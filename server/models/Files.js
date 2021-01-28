@@ -2,7 +2,8 @@
 const { Sequelize, DataTypes } = require('sequelize');
 const sequelize = new Sequelize('sqlite::memory:');
 
-const Files = sequelize.define('Files', {
+class Files extends Model {}
+Files.init({
     id: {
         type: DataTypes.INTEGER
     },
@@ -18,4 +19,4 @@ const Files = sequelize.define('Files', {
     bd_id: {
         type: DataTypes.INTEGER
     }
-});
+}, {modelName: "Files"});

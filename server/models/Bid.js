@@ -2,7 +2,8 @@
 const { Sequelize, DataTypes } = require('sequelize');
 const sequelize = new Sequelize('sqlite::memory:');
 
-const Bid = sequelize.define('Bid', {
+class Bid extends Model {}
+Bid.init({
     bid_id: {
         type: DataTypes.INTEGER
     },
@@ -21,4 +22,4 @@ const Bid = sequelize.define('Bid', {
     proffessional_id: {
         type: DataTypes.INTEGER
     }
-});
+}, {modelName: "Bid"});

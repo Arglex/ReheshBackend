@@ -2,7 +2,8 @@
 const { Sequelize, DataTypes } = require('sequelize');
 const sequelize = new Sequelize('sqlite::memory:');
 
-const StatusHistory = sequelize.define('StatusHistory', {
+class StatusHistory extends Model {}
+StatusHistory.init({
     history_id: {
         type: DataTypes.INTEGER
     },
@@ -27,4 +28,4 @@ const StatusHistory = sequelize.define('StatusHistory', {
     old_value: {
         type: DataTypes.DATEONLY
     }
-});
+}, {modelName: "StatusHistory"});

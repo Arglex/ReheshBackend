@@ -2,11 +2,12 @@
 const { Sequelize, DataTypes } = require('sequelize');
 const sequelize = new Sequelize('sqlite::memory:');
 
-const Provider = sequelize.define('Provider', {
+class Provider extends Model {}
+Provider.init({
     id: {
         type: DataTypes.INTEGER
     },
     provider_name: {
         type: DataTypes.STRING
     }
-});
+}, {modelName: "Provider"});

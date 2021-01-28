@@ -2,7 +2,8 @@
 const { Sequelize, DataTypes } = require('sequelize');
 const sequelize = new Sequelize('sqlite::memory:');
 
-const BaseHierarchy = sequelize.define('BaseHierarchy', {
+class BaseHierarchy extends Model {}
+BaseHierarchy.init({
     bim_id: {
         type: DataTypes.INTEGER
     },
@@ -15,4 +16,4 @@ const BaseHierarchy = sequelize.define('BaseHierarchy', {
     department_name: {
         type: DataTypes.STRING
     }
-});
+}, {modelName: "BaseHierarchy"});
